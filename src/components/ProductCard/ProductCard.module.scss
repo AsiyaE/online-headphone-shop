@@ -1,0 +1,75 @@
+@import './../../variables.scss';
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  width: 350px;
+  min-height: 407px;
+  padding: 26px 22px 32px;
+
+  border-radius: 20px;
+
+  background-color: $white;
+
+  .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 280px;
+    padding-bottom: 50px;
+
+    img {
+      display: block;
+      // width:219px;
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+
+    .price {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $orange;
+      font-weight: 600;
+      font-size: 17px;
+
+      .prev {
+        color: $yellow;
+        font-size: 13px;
+        text-decoration-line: line-through;
+      }
+    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+
+    .rating {
+      display: flex;
+      gap: 10px;
+
+      span {
+        margin-top: auto;
+      }
+    }
+    .buy {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+
+      font-family: 'Montserrat';
+      font-weight: 600;
+      font-size: 17px;
+
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+}

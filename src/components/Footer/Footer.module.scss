@@ -5,7 +5,7 @@
   justify-content: space-between;
   min-height: 149px;
   margin-top: auto;
-  padding: 29px;
+  padding: 33px;
 
   background-color: $white;
 
@@ -14,26 +14,48 @@
 
   .name {
     font-size: 25px;
+    font-weight: 700;
+    transform: translateY(-5px);
   }
 
   .options {
     li {
       margin-bottom: 10px;
+      cursor: pointer;
     }
   }
   .settings {
     span {
-      margin-bottom: 35px;
+      display: block;
+      margin-bottom: 34px;
+      cursor: pointer;
     }
 
     .languages {
       display: flex;
       gap: 15px;
+      font-weight: 500;
 
       ul {
         display: flex;
         gap: 15px;
+        cursor: pointer;
+
+        .selected {
+          color: $orange;
+          font-weight: 700;
+        }
       }
+    }
+  }
+
+  .social {
+    display: flex;
+    gap: 17px;
+    height: min-content;
+
+    img {
+      cursor: pointer;
     }
   }
 }
