@@ -60,3 +60,53 @@ h2 {
     }
   }
 }
+
+.cart {
+  &-title {
+    margin-top: 30px;
+    margin-bottom: 13px;
+  }
+
+  &-content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .total {
+    display: flex;
+    flex-direction: column;
+    height: 114px;
+    width: 348px;
+    background-color: $white;
+    box-shadow: $box-shadow;
+    border-radius: 30px;
+
+    &-price {
+      display: flex;
+      justify-content: space-between;
+      padding: 22px;
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    button {
+      padding: 22px;
+      background-color: $black-icon;
+      color: $white;
+      font-family: Montserrat;
+      font-weight: 600;
+      font-size: 17px;
+      border:none;
+      border-radius: 20px;
+      box-shadow: $button-shadow;
+      cursor: pointer;
+
+      &:hover{
+        background-color: $orange;
+      }
+    }
+  }
+}

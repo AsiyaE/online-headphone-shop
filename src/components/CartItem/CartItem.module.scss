@@ -1,0 +1,89 @@
+@import '../../variables.scss';
+
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 633px;
+  padding: 18px;
+  padding-right: 28px;
+  background-color: $white;
+  box-shadow: $box-shadow;
+  border-radius: 30px;
+
+  .bin {
+    position: absolute;
+    right: 28px;
+    top: 18px;
+
+    cursor: pointer;
+    &:hover {
+      filter: brightness(0.7);
+    }
+  }
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    .img {
+      img {
+        width: 146px;
+        height: 146px;
+        object-fit: contain;
+      }
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      .title {
+        font-weight: 500;
+        font-size: 17px;
+      }
+
+      .price {
+        font-weight: 600;
+        font-size: 15px;
+        color: $light-gray;
+      }
+    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .settings {
+      display: flex;
+      gap: 23px;
+      align-items: center;
+
+      .count {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 30px;
+        border-radius: 15px;
+        background-color: $yellow;
+        cursor: pointer;
+        &:hover {
+          background-color: $orange;
+        }
+      }
+
+      span {
+        font-weight: 600;
+        font-size: 17px;
+      }
+    }
+
+    .total {
+      font-weight: 600;
+      font-size: 15px;
+    }
+  }
+}

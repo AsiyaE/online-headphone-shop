@@ -9,16 +9,16 @@ const Home = () => {
       <div className="home-items">
         {headphones
           .filter((card) => card.wireless === 0)
-          .map((card, id) => (
-            <ProductCard key={id} {...card} />
+          .map((card) => (
+            <ProductCard key={card.id} {...card} />
           ))}
       </div>
       <h2 className="home-title">Беспроводные наушники</h2>
       <div className="home-items">
         {headphones
           .filter((card) => card.wireless)
-          .map((card, id) => (
-            <ProductCard key={id} {...card} />
+          .map((card) => (
+            <ProductCard key={card.id} {...card} />
           ))}
       </div>
     </div>

@@ -1,0 +1,25 @@
+@import '../../variables.scss';
+
+.button {
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  padding: 6px;
+  background-color: $orange;
+  border-radius: 9px;
+
+  span {
+    color: $white;
+    font-weight: 500;
+    font-size: 15px;
+  }
+}
