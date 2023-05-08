@@ -2,6 +2,13 @@
 
 .button {
   position: relative;
+
+  svg {
+    fill: $dark-gray;
+    :hover {
+      fill: $black-icon;
+    }
+  }
 }
 
 .circle {

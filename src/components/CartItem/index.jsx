@@ -1,25 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './CartItem.module.scss';
 
-const CartItem = ({ img, title, price }) => {
-  const [count, setCount] = useState(1);
-  const [itemSum, setItemSum] = useState(price * count);
-
-  const onClickPlus = () => {
-    setCount(count + 1);
-  };
-
-  const onClickMinus = () => {
-    if (count) setCount(count - 1);
-  };
-
-  useEffect(() => {
-    setItemSum(price * count);
-  }, [count]);
+const CartItem = ({ id, img, title, price, count, addToOrder, removeOne, removeItem }) => {
+  const itemSum = price * count;
 
   return (
     <div className={styles.item}>
       <svg
+        onClick={() => removeItem(id)}
         className={styles.bin}
         width="21"
         height="17"
@@ -37,12 +25,12 @@ const CartItem = ({ img, title, price }) => {
         </div>
         <div className={styles.description}>
           <span className={styles.title}>{title}</span>
-          <span className={styles.price}>{price} ₽</span>
+          <span className={styles.price}>{price.toLocaleString()} ₽</span>
         </div>
       </div>
       <div className={styles.bottom}>
         <div className={styles.settings}>
-          <div type="button" className={styles.count} onClick={onClickMinus}>
+          <div type="button" className={styles.count} onClick={() => removeOne(id)}>
             <svg
               width="18"
               height="2"
@@ -53,7 +41,7 @@ const CartItem = ({ img, title, price }) => {
             </svg>
           </div>
           <span>{count}</span>
-          <div type="button" className={styles.count} onClick={onClickPlus}>
+          <div type="button" className={styles.count} onClick={() => addToOrder(id)}>
             <svg
               width="17"
               height="14"
@@ -67,7 +55,7 @@ const CartItem = ({ img, title, price }) => {
             </svg>
           </div>
         </div>
-        <span className={styles.total}>{itemSum} ₽</span>
+        <span className={styles.total}>{itemSum.toLocaleString()} ₽</span>
       </div>
     </div>
   );

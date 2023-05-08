@@ -1,24 +1,28 @@
 import React from 'react';
-import CartItem from '../components/CartItem/index.jsx'
-import img1 from '../assets/img/earphone1.png'
+import CartItem from '../components/CartItem/index.jsx';
 
+const Cart = ({ orderList, addToOrder, removeOneFromOrder, removeProductFromOrder }) => {
+  const totalSum = orderList.reduce((acc, item) => acc + item.count * item.price, 0);
 
-const Cart = () => {
   return (
-    <div className='cart'>
+    <div className="cart">
       <h2 className="cart-title">Корзина</h2>
       <div className="cart-content">
         <div className="cart-list">
-          <CartItem 
-            img={img1}
-            title='Apple BYZ S852I'
-            price={2927}
-          />
+          {orderList.map((item) => (
+            <CartItem
+              key={item.id}
+              addToOrder={addToOrder}
+              removeOne={removeOneFromOrder}
+              removeItem={removeProductFromOrder}
+              {...item}
+            />
+          ))}
         </div>
         <div className="total">
           <div className="total-price">
             <span>ИТОГО</span>
-            <span>₽ 2 927</span>
+            <span>₽ {totalSum.toLocaleString()}</span>
           </div>
           <button>Перейти к оформлению</button>
         </div>
