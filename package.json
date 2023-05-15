@@ -41,6 +41,5 @@
   },
   "devDependencies": {
     "gh-pages": "^5.0.0"
-  },
-  "homepage": "https://asiyae.github.io/online-headphone-shop/"
+  }
 }
